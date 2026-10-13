@@ -44,14 +44,10 @@ def repeated_computation_slow(values: list[int]) -> list[int]:
     return result
 
 
-def count_members_slow(
-    values: list[int],
-    allowed: list[int],
-) -> int:
+def count_members_slow(values: list[int], allowed: list[int]) -> int:
     count = 0
-
+    allowed_set = set(allowed)
     for value in values:
-        if value in allowed:
+        if value in allowed_set:
             count += 1
-
     return count
