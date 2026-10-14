@@ -48,10 +48,5 @@ def count_members_slow(
     values: list[int],
     allowed: list[int],
 ) -> int:
-    count = 0
-
-    for value in values:
-        if value in allowed:
-            count += 1
-
-    return count
+    allowed_set = set(allowed)
+    return sum(1 for value in values if value in allowed_set)
